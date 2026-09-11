@@ -41,7 +41,8 @@ export default function Lanyard({
   backImage = null,
   imageFit = 'cover',
   lanyardImage = null,
-  lanyardWidth = 1
+  lanyardWidth = 1,
+  cardScale = 2.25
 }) {
   const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth < 768);
 
@@ -69,6 +70,7 @@ export default function Lanyard({
             imageFit={imageFit}
             lanyardImage={lanyardImage || bandImage}
             lanyardWidth={lanyardWidth}
+            cardScale={cardScale}
           />
         </Physics>
         <Environment blur={0.75}>
@@ -115,7 +117,8 @@ function Band({
   backImage = null,
   imageFit = 'cover',
   lanyardImage = null,
-  lanyardWidth = 1
+  lanyardWidth = 1,
+  cardScale = 2.25
 }) {
   const band = useRef(),
     fixed = useRef(),
@@ -250,7 +253,7 @@ function Band({
         <RigidBody position={[2, 0, 0]} ref={card} {...segmentProps} type={dragged ? 'kinematicPosition' : 'dynamic'}>
           <CuboidCollider args={[0.8, 1.125, 0.01]} />
           <group
-            scale={2.25}
+            scale={cardScale}
             position={[0, -1.2, -0.05]}
             onPointerOver={() => hover(true)}
             onPointerOut={() => hover(false)}
