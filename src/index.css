@@ -51,7 +51,7 @@ button { font-family: inherit; cursor: pointer; }
 ══════════════════════════════════════════ */
 header.header {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
+  display: flex; align-items: center; justify-content: space-between;
   padding: var(--header-y) var(--header-x) 10px;
   background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none;
   border-bottom: 1px solid transparent;
@@ -71,26 +71,39 @@ a.logo:hover .logo-mark-img { transform: scale(1.08); filter: drop-shadow(0 0 20
 .logo-dot { font-weight: 700; color: #D4AF37; }
 .logo-code { font-weight: 700; letter-spacing: -0.03em; background: linear-gradient(135deg, #FFFFFF 0%, #E6C687 50%, #C5A059 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-#site-nav { display: flex; align-items: center; gap: 8px; justify-self: center; }
-.nav-pill {
-  height: var(--nav-h); padding: 0 18px; border-radius: 7px; overflow: hidden; position: relative;
-  border: 1px solid rgba(198,198,198,0.45);
+/* ── Mobile Navigation Drawer ── */
+.mobile-nav {
+  display: none;
+  position: fixed; inset: 0; z-index: 95;
+  flex-direction: column; justify-content: center; align-items: center; gap: 16px;
+  padding: 96px 22px 40px;
+  background: transparent;
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity 0.28s ease, visibility 0.28s ease;
+}
+.mobile-nav--open {
+  opacity: 1; visibility: visible; pointer-events: auto;
+}
+.mobile-nav-links {
+  display: flex; flex-direction: column; align-items: center; gap: 8px; width: 100%;
+}
+.mobile-nav-link {
+  width: 100%; max-width: 360px; height: 56px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 10px; border: 1px solid rgba(198,198,198,0.45);
   background: linear-gradient(105deg, #050505 0%, #2a2a2a 48%, #4a4a4a 100%);
-  color: #f3f3f3; font-size: var(--nav); font-weight: 400; letter-spacing: -0.01em;
-  white-space: nowrap; display: inline-flex; align-items: center; justify-content: center;
+  color: #f3f3f3; font-size: 18px; font-weight: 400; letter-spacing: -0.01em;
+  text-decoration: none;
   transition: background 0.35s, border-color 0.35s, box-shadow 0.35s;
 }
-.nav-pill::before {
-  content: ""; position: absolute; inset: 0;
-  background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.16) 50%, transparent 70%);
-  transform: translateX(-120%); transition: transform 0.6s ease;
-}
-.nav-pill:hover, .nav-pill.active {
+.mobile-nav-link:hover {
   border-color: rgba(235,235,235,0.9);
   background: linear-gradient(105deg, #111 0%, #3a3a3a 45%, #6a6a6a 100%);
   box-shadow: 0 0 18px rgba(200,210,230,0.18);
 }
-.nav-pill:hover::before { transform: translateX(120%); }
+.mobile-nav-cta {
+  width: 100%; max-width: 360px; height: 52px; font-size: 15px; margin-top: 8px;
+}
 
 .header-right { display: flex; align-items: center; justify-content: flex-end; gap: 10px; }
 
@@ -486,11 +499,8 @@ footer.site-footer {
 }
 @media (max-width:900px) {
   :root{--logo:16px;--btn:15px;--btn-h:46px;--hero-btn-h:48px;--h1:36px;--lede:16px;--badge:13px;--header-y:14px;--header-x:18px;--hero-gap:36px;}
-  header.header{grid-template-columns:1fr auto auto;gap:8px;}
   .burger{display:flex;} .menu-backdrop{display:block;}
-  #site-nav{position:fixed;inset:0;z-index:95;flex-direction:column;justify-content:center;gap:12px;padding:96px 22px 32px;background:transparent;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 0.28s,visibility 0.28s;}
-  body.menu-open #site-nav{opacity:1;visibility:visible;pointer-events:auto;}
-  .nav-pill{width:100%;height:56px;font-size:18px;border-radius:10px;}
+  .mobile-nav{display:flex;}
   body.menu-open{overflow:hidden!important;}
   .services-grid,.pricing-grid,.testi-grid{grid-template-columns:1fr;}
   .service-card.featured{grid-column:span 1;}
@@ -498,6 +508,8 @@ footer.site-footer {
   #layanan,#proses,#paket,#klien,#cta-section{padding:80px 20px;}
   footer.site-footer{flex-direction:column;align-items:flex-start;}
   .trust-strip{gap:20px;padding:16px 20px;}
+  /* Hide CTA button on mobile — available inside drawer */
+  header.header .btn-solid { display: none; }
 }
 @media (max-width:560px) {
   :root{--h1:32px;--header-x:16px;}
