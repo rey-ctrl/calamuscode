@@ -41,7 +41,7 @@ export default function Hero() {
           </h1>
 
           <p className="lede appear appear--soft" style={{ '--d': '.86s', animationDuration: '1.25s' }}>
-            Calamus.Code hadir sebagai mitra coding-mu. Kami bantu wujudkan website profesional — dari landing page, portfolio, hingga web app — dengan sesi 1-on-1 eksklusif untuk area Jabodetabek.
+            Calamus.Code hadir sebagai mitra coding-mu. Kami bantu wujudkan website profesional dari landing page, portfolio, hingga web app dengan sesi 1-on-1 eksklusif untuk area Jabodetabek.
           </p>
 
           <div className="hero-actions">
