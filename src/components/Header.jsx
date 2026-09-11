@@ -29,7 +29,7 @@ export default function Header({ activeProject, onNewSession, activeTab, setActi
         {/* Left: Brand Logo & Project Pill */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
           <a href="#top" style={{ display: 'flex', alignItems: 'center', gap: '14px', textDecoration: 'none', color: '#fff', fontSize: '24px', fontWeight: 700, letterSpacing: '-0.02em' }}>
-            <img src="/logo-square.png" alt="Calamus.Code Logo" style={{ height: '58px', width: 'auto', objectFit: 'contain', filter: 'drop-shadow(0 0 16px rgba(212, 175, 55, 0.65))' }} />
+            <img src="/logo-new.png" alt="Calamus.Code Logo" style={{ height: '58px', width: 'auto', objectFit: 'contain', filter: 'drop-shadow(0 0 16px rgba(212, 175, 55, 0.65))' }} />
             <span>Calamus<span style={{ color: '#D4AF37' }}>.</span><span style={{ background: 'linear-gradient(135deg, #FFFFFF 0%, #E6C687 50%, #C5A059 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Code</span></span>
           </a>
 

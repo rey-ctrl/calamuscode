@@ -37,7 +37,7 @@ export default function Navbar() {
       <header className={`header${scrolled ? ' scrolled' : ''}`} id="siteHeader">
         {/* Logo */}
         <a href="#hero" className="logo appear appear--scale" style={{ '--d': '.08s' }}>
-          <img src="/logo-square.png" alt="Calamus.Code Logo" className="logo-mark-img" />
+          <img src="/logo-new.png" alt="Calamus.Code Logo" className="logo-mark-img" />
           <span>
             Calamus<span className="logo-dot">.</span><span className="logo-code">Code</span>
           </span>

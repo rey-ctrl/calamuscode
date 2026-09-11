@@ -4,7 +4,7 @@ export default function CTASection() {
   return (
     <div id="cta-section">
       <div className="cta-orb reveal-scale">
-        <img src="/logo-square.png" alt="Calamus Logo" className="cta-orb-logo" />
+        <img src="/logo-new.png" alt="Calamus Logo" className="cta-orb-logo" />
       </div>
       <h2 className="cta-heading reveal">
         Website impianmu bisa jadi<br />
