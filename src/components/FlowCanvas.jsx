@@ -29,7 +29,7 @@ const pipelineNodes = [
   },
   {
     id: 'node-2',
-    title: 'DesainPakeAI Context Sync',
+    title: 'Desain Context Sync',
     subtitle: 'Mengambil token warna & tipografi Violet Rail',
     type: 'context',
     icon: Database,

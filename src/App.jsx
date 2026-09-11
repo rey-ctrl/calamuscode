@@ -81,7 +81,7 @@ export default function App() {
                   <Terminal size={12} /> DesainPakeAI "Violet Rail" Foundation
                 </span>
                 <span style={{ fontSize: '12px', color: 'var(--color-text-muted)', fontFamily: 'var(--font-mono)' }}>
-                  © 2026 Calamus.Code — Powered by Violet Rail (alpha.1)
+                  Rev: sha256-d65642602ee0a179
                 </span>
               </div>
               <h1 className="font-serif" style={{ fontSize: '32px', fontWeight: 600, color: '#ffffff', lineHeight: 1.2 }}>
