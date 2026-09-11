@@ -76,10 +76,11 @@ export default function Navbar() {
         aria-label="Navigasi utama"
       >
         <div className="mobile-nav-links">
-          <a href="#layanan" className="mobile-nav-link" onClick={closeMenu}>Layanan</a>
-          <a href="#proses" className="mobile-nav-link" onClick={closeMenu}>Proses</a>
-          <a href="#paket" className="mobile-nav-link" onClick={closeMenu}>Paket</a>
-          <a href="#klien" className="mobile-nav-link" onClick={closeMenu}>Klien</a>
+          <a href="/#layanan" className="mobile-nav-link" onClick={closeMenu}>Layanan</a>
+          <a href="/#proses" className="mobile-nav-link" onClick={closeMenu}>Proses</a>
+          <a href="/#paket" className="mobile-nav-link" onClick={closeMenu}>Paket</a>
+          <a href="/#klien" className="mobile-nav-link" onClick={closeMenu}>Klien</a>
+          <a href="/#about" className="mobile-nav-link" onClick={closeMenu}>Tentang Kami</a>
         </div>
         <a
           href="https://wa.me/6289636209169?text=Halo%20Calamus.Code,%20saya%20ingin%20konsultasi%20pembuatan%20website"
