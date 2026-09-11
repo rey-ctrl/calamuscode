@@ -28,16 +28,9 @@ export default function Header({ activeProject, onNewSession, activeTab, setActi
       }}>
         {/* Left: Brand Logo & Project Pill */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-          <a href="#top" style={{ display: 'flex', alignItems: 'center', gap: '9px', textDecoration: 'none', color: '#fff', fontSize: '15.5px', fontWeight: 600, letterSpacing: '-0.03em' }}>
-            <svg style={{ width: '22px', height: '22px', flexShrink: 0 }} viewBox="0 0 24 24" fill="currentColor">
-              <g transform="rotate(-30 12 12)">
-                <circle cx="7.3" cy="3.2" r="1.45" />
-                <rect x="5.5" y="4.7" width="3.6" height="14.6" rx="1.8" />
-                <rect x="14.9" y="4.7" width="3.6" height="14.6" rx="1.8" />
-                <circle cx="16.7" cy="20.8" r="1.45" />
-              </g>
-            </svg>
-            <span>Vesper<span style={{ fontWeight: 400, opacity: 0.7 }}>.ai</span></span>
+          <a href="#top" style={{ display: 'flex', alignItems: 'center', gap: '14px', textDecoration: 'none', color: '#fff', fontSize: '24px', fontWeight: 700, letterSpacing: '-0.02em' }}>
+            <img src="/logo-square.png" alt="Calamus.Code Logo" style={{ height: '58px', width: 'auto', objectFit: 'contain', filter: 'drop-shadow(0 0 16px rgba(212, 175, 55, 0.65))' }} />
+            <span>Calamus<span style={{ color: '#D4AF37' }}>.</span><span style={{ background: 'linear-gradient(135deg, #FFFFFF 0%, #E6C687 50%, #C5A059 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Code</span></span>
           </a>
 
           <div style={{ height: '20px', width: '1px', background: 'rgba(255, 255, 255, 0.16)' }} />

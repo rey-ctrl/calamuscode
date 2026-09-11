@@ -1,11 +1,14 @@
 :root {
-  /* Color Tokens - Vesper.ai Pure Black Palette & Tokens */
+  /* Color Tokens - Calamus.Code Pure Black & Metallic Gold Palette & Tokens */
   --bg: #000000;
   --text: #ffffff;
   --muted: #9a9a9a;
   --stat: #d8d8d8;
   --border: rgba(255, 255, 255, 0.16);
   --border-soft: rgba(255, 255, 255, 0.12);
+  --color-gold: #D4AF37;
+  --color-gold-light: #E6C687;
+  --color-gold-dark: #C5A059;
 
   --color-canvas: #000000;
   --color-surface: #0a0a0a;

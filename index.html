@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calamus.Code — Jasa Pembuatan Website Profesional</title>
   <meta name="description" content="Calamus.Code adalah jasa pembuatan website profesional untuk pelajar, UMKM, dan startup. Tersedia sesi 1-on-1 tatap muka di area Jabodetabek.">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cg transform='rotate(-30 12 12)'%3E%3Ccircle cx='7.3' cy='3.2' r='1.45'/%3E%3Crect x='5.5' y='4.7' width='3.6' height='14.6' rx='1.8'/%3E%3Crect x='14.9' y='4.7' width='3.6' height='14.6' rx='1.8'/%3E%3Ccircle cx='16.7' cy='20.8' r='1.45'/%3E%3C/g%3E%3C/svg%3E">
+  <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
@@ -74,12 +74,13 @@
     }
 
     a.logo {
-      display: inline-flex; align-items: center; gap: 9px; justify-self: start;
-      font-size: var(--logo); font-weight: 600; letter-spacing: -0.03em; color: #fff;
+      display: inline-flex; align-items: center; gap: 14px; justify-self: start;
+      font-size: 24px; font-weight: 700; letter-spacing: -0.03em; color: #fff;
     }
-    .logo-mark { width: var(--logo-mark); height: var(--logo-mark); flex-shrink: 0; }
-    .logo-dot { font-weight: 400; opacity: 0.5; }
-    .logo-code { font-weight: 700; letter-spacing: -0.04em; }
+    .logo-mark-img { height: 58px; width: auto; object-fit: contain; flex-shrink: 0; filter: drop-shadow(0 0 14px rgba(212, 175, 55, 0.65)); transition: transform 0.3s ease, filter 0.3s ease; }
+    a.logo:hover .logo-mark-img { transform: scale(1.08); filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.85)); }
+    .logo-dot { font-weight: 700; color: #D4AF37; }
+    .logo-code { font-weight: 700; letter-spacing: -0.03em; background: linear-gradient(135deg, #FFFFFF 0%, #E6C687 50%, #C5A059 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
     #site-nav { display: flex; align-items: center; gap: 8px; justify-self: center; }
     .nav-pill {
@@ -423,14 +424,20 @@
       display: flex; flex-direction: column; align-items: center; text-align: center;
     }
     .cta-orb {
-      width: 140px; height: 140px; border-radius: 50%; margin-bottom: 48px;
+      width: 190px; height: 190px; border-radius: 50%; margin-bottom: 40px;
       display: flex; align-items: center; justify-content: center;
-      border: 1px solid rgba(255,255,255,0.15);
-      background: radial-gradient(circle at 40% 30%, rgba(74,222,128,0.12), rgba(0,0,0,0.9));
-      box-shadow: 0 0 0 24px rgba(74,222,128,0.02), 0 0 0 48px rgba(74,222,128,0.01);
+      border: 2px solid rgba(212, 175, 55, 0.5);
+      background: radial-gradient(circle at 40% 30%, rgba(212, 175, 55, 0.28), rgba(12, 10, 5, 0.96));
+      box-shadow: 0 0 0 28px rgba(212,175,55,0.05), 0 0 0 56px rgba(212,175,55,0.025), 0 0 80px rgba(212,175,55,0.25);
       animation: pulse-orb 4s ease-in-out infinite;
     }
-    @keyframes pulse-orb { 0%,100%{box-shadow:0 0 0 24px rgba(74,222,128,0.02),0 0 0 48px rgba(74,222,128,0.01),0 0 60px rgba(74,222,128,0.06);}50%{box-shadow:0 0 0 24px rgba(74,222,128,0.05),0 0 0 48px rgba(74,222,128,0.025),0 0 80px rgba(74,222,128,0.14);} }
+    .cta-orb-logo {
+      width: 135px; height: 135px; object-fit: contain;
+      filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.8));
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+    .cta-orb:hover .cta-orb-logo { transform: scale(1.12) rotate(4deg); filter: drop-shadow(0 0 28px rgba(212, 175, 55, 1)); }
+    @keyframes pulse-orb { 0%,100%{box-shadow:0 0 0 28px rgba(212,175,55,0.05),0 0 0 56px rgba(212,175,55,0.025),0 0 80px rgba(212,175,55,0.25);}50%{box-shadow:0 0 0 34px rgba(212,175,55,0.1),0 0 0 68px rgba(212,175,55,0.05),0 0 110px rgba(212,175,55,0.42);} }
     .cta-heading { font-size: clamp(34px, 4vw, 60px); font-weight: 500; letter-spacing: -0.04em; line-height: 1.1; color: #fff; margin-bottom: 16px; }
     .cta-heading em { font-family: var(--font-serif); font-style: italic; color: #9a9a9a; }
     .cta-sub { font-size: 16px; color: #9a9a9a; max-width: 420px; line-height: 1.65; margin-bottom: 40px; }
@@ -617,14 +624,7 @@
 <!-- ── HEADER ── -->
 <header class="header" id="siteHeader">
   <a href="#hero" class="logo appear appear--scale" style="--d:.08s">
-    <svg class="logo-mark" viewBox="0 0 24 24" fill="currentColor">
-      <g transform="rotate(-30 12 12)">
-        <circle cx="7.3" cy="3.2" r="1.45"/>
-        <rect x="5.5" y="4.7" width="3.6" height="14.6" rx="1.8"/>
-        <rect x="14.9" y="4.7" width="3.6" height="14.6" rx="1.8"/>
-        <circle cx="16.7" cy="20.8" r="1.45"/>
-      </g>
-    </svg>
+    <img src="/logo-square.png" alt="Calamus.Code Logo" class="logo-mark-img">
     <span>Calamus<span class="logo-dot">.</span><span class="logo-code">Code</span></span>
   </a>
 
@@ -1019,14 +1019,7 @@
     <!-- ── CTA ── -->
     <div id="cta-section">
       <div class="cta-orb reveal-scale">
-        <svg width="52" height="52" viewBox="0 0 24 24" fill="white">
-          <g transform="rotate(-30 12 12)">
-            <circle cx="7.3" cy="3.2" r="1.45"/>
-            <rect x="5.5" y="4.7" width="3.6" height="14.6" rx="1.8"/>
-            <rect x="14.9" y="4.7" width="3.6" height="14.6" rx="1.8"/>
-            <circle cx="16.7" cy="20.8" r="1.45"/>
-          </g>
-        </svg>
+        <img src="/logo-square.png" alt="Calamus Logo" class="cta-orb-logo">
       </div>
       <h2 class="cta-heading reveal">Website-mu bisa jadi<br><em>kenyataan hari ini.</em></h2>
       <p class="cta-sub reveal stagger-1">
@@ -1045,16 +1038,8 @@
 
     <!-- ── FOOTER ── -->
     <footer class="site-footer">
-      <div class="footer-brand">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-          <g transform="rotate(-30 12 12)">
-            <circle cx="7.3" cy="3.2" r="1.45"/>
-            <rect x="5.5" y="4.7" width="3.6" height="14.6" rx="1.8"/>
-            <rect x="14.9" y="4.7" width="3.6" height="14.6" rx="1.8"/>
-            <circle cx="16.7" cy="20.8" r="1.45"/>
-          </g>
-        </svg>
-        Calamus.Code
+      <div class="footer-brand" style="display: flex; align-items: center; gap: 12px;">
+        <span style="font-size: 18px;">Calamus<span style="color: #D4AF37;">.</span><span style="background: linear-gradient(135deg, #FFF 0%, #E6C687 50%, #C5A059 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;">Code</span></span>
       </div>
       <div class="footer-links">
         <a href="#layanan">Layanan</a>
