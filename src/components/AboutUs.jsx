@@ -28,6 +28,7 @@ function LanyardCard({ member, index }) {
           position={[0, 0, 11]}
           gravity={[0, -40, 0]}
           cardGLB={member.cardGLB}
+          lanyardHeight={1}
           lanyardWidth={1.3}
           cardScale={2.8}
         />
