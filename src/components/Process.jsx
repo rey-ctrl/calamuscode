@@ -42,8 +42,8 @@ const STEPS = [
 export default function Process() {
   return (
     <div id="proses">
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'start' }}>
-        <div>
+      <div className="process-grid">
+        <div className="process-header">
           <div className="section-label reveal">Cara Kerja</div>
           <h2 className="section-heading reveal stagger-1">
             Dari chat ke website<br />

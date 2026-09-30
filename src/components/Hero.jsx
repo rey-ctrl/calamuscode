@@ -64,13 +64,6 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="scroll-hint">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M12 5v14M5 12l7 7 7-7" />
-          </svg>
-          scroll
-        </div>
-
         {/* Trust strip */}
         <div className="trust-strip">
           <div className="trust-item appear" style={{ '--d': '1.2s', animationName: 'in-soft' }}>

@@ -44,12 +44,23 @@ export default function Lanyard({
   lanyardWidth = 1,
   cardScale = 2.25
 }) {
-  const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth < 768);
+  const checkIfMobile = () => {
+    if (typeof window === 'undefined') return false;
+    const isTouch = 'ontouchstart' in window || (navigator.maxTouchPoints && navigator.maxTouchPoints > 0);
+    const isSmallDimension = Math.min(window.innerWidth, window.innerHeight) < 768 || window.innerWidth < 768;
+    return isTouch || isSmallDimension;
+  };
+
+  const [isMobile, setIsMobile] = useState(checkIfMobile);
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    const handleResize = () => setIsMobile(checkIfMobile());
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener('orientationchange', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('orientationchange', handleResize);
+    };
   }, []);
 
   return (

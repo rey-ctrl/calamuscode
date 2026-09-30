@@ -9,3 +9,7 @@
   transform: scale(1);
   transform-origin: center;
 }
+
+.lanyard-wrapper canvas {
+  touch-action: none;
+}
