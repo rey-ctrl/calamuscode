@@ -5,7 +5,6 @@ import Services from './components/Services';
 import Process from './components/Process';
 import Pricing from './components/Pricing';
 import Testimonials from './components/Testimonials';
-import AboutUs from './components/AboutUs';
 import CTASection from './components/CTASection';
 import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
@@ -42,9 +41,6 @@ export default function App() {
 
           <div className="divider"></div>
           <CTASection />
-
-          <div className="divider"></div>
-          <AboutUs />
 
           <div className="divider"></div>
           <Footer />

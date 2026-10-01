@@ -504,138 +504,298 @@ h1 em {
 .about-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
+  gap: 36px;
   margin-top: 48px;
   width: 100%;
-  max-width: 900px;
+  max-width: 960px;
 }
 
 .about-card {
   position: relative;
-  background: linear-gradient(160deg, rgba(20, 18, 12, 0.95), rgba(8, 8, 8, 0.98));
-  border: 1px solid rgba(212, 175, 55, 0.18);
-  border-radius: 20px;
-  padding: 32px 28px 36px;
+  background: linear-gradient(165deg, rgba(24, 21, 15, 0.95), rgba(10, 10, 10, 0.98));
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 24px;
+  padding: 34px 30px 36px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   overflow: hidden;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
 }
 .about-card::before {
   content: '';
   position: absolute;
   inset: 0;
-  border-radius: 20px;
-  background: radial-gradient(ellipse at 50% 0%, rgba(212, 175, 55, 0.08) 0%, transparent 60%);
+  border-radius: 24px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(212, 175, 55, 0.12) 0%, transparent 65%);
   pointer-events: none;
 }
 .about-card:hover {
-  border-color: rgba(212, 175, 55, 0.4);
-  box-shadow: 0 0 40px rgba(212, 175, 55, 0.12), 0 16px 48px rgba(0, 0, 0, 0.4);
-  transform: translateY(-4px);
+  border-color: rgba(212, 175, 55, 0.5);
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.16), 0 20px 48px rgba(0, 0, 0, 0.55);
+  transform: translateY(-6px);
 }
 
-/* 3D Lanyard Viewer */
-.about-lanyard-wrap {
-  position: relative;
+/* Card Top Bar */
+.about-card-top {
   width: 100%;
-  height: 500px;
-  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  z-index: 1;
 }
-.about-lanyard-glow {
+.about-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  font-size: 11px;
+  font-weight: 500;
+  color: #34d399;
+  letter-spacing: 0.02em;
+}
+.about-status-pill .status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+.about-badge-role {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #e6c687;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+/* Avatar Monogram presentation */
+.about-avatar-wrap {
+  position: relative;
+  margin-bottom: 22px;
+  z-index: 1;
+}
+.about-avatar-glow {
   position: absolute;
-  bottom: 0; left: 50%;
-  transform: translateX(-50%);
-  width: 120px; height: 24px;
-  background: radial-gradient(ellipse, rgba(212, 175, 55, 0.35), transparent 70%);
-  filter: blur(10px);
+  inset: -10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.35) 0%, transparent 70%);
+  filter: blur(12px);
   pointer-events: none;
-  animation: lanyard-glow-pulse 3s ease-in-out infinite;
+  animation: avatar-glow-pulse 4s ease-in-out infinite;
 }
-@keyframes lanyard-glow-pulse {
-  0%, 100% { opacity: 0.6; transform: translateX(-50%) scale(1); }
-  50% { opacity: 1; transform: translateX(-50%) scale(1.2); }
+@keyframes avatar-glow-pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+.about-avatar {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, rgba(32, 28, 18, 0.95), rgba(14, 14, 14, 0.98));
+  border: 2px solid rgba(212, 175, 55, 0.45);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(212, 175, 55, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s ease, border-color 0.4s ease;
+}
+.about-card:hover .about-avatar {
+  transform: scale(1.05);
+  border-color: rgba(212, 175, 55, 0.8);
+}
+.about-avatar-text {
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #ffffff 0%, #ecd09b 50%, #c5a059 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: inherit;
+}
+.about-avatar-icon {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #15130d;
+  border: 1.5px solid rgba(212, 175, 55, 0.5);
+  color: #d4af37;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
 }
 
 /* Card Info */
 .about-card-info {
-  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  z-index: 1;
 }
 .about-card-name {
-  font-size: 22px; font-weight: 600; letter-spacing: -0.03em; color: #fff;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #fff;
   background: linear-gradient(135deg, #FFFFFF 0%, #E6C687 50%, #C5A059 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
 }
 .about-card-role {
-  font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: #D4AF37;
 }
+.about-card-tagline {
+  font-size: 12px;
+  color: #888;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* Tags / Skills */
+.about-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 8px;
+  max-width: 360px;
+}
+.about-tag-item {
+  font-size: 11px;
+  font-weight: 500;
+  color: #d8c292;
+  background: rgba(212, 175, 55, 0.07);
+  border: 1px solid rgba(212, 175, 55, 0.16);
+  padding: 4px 11px;
+  border-radius: 12px;
+  transition: all 0.25s ease;
+}
+.about-tag-item:hover {
+  background: rgba(212, 175, 55, 0.14);
+  border-color: rgba(212, 175, 55, 0.35);
+  color: #ffffff;
+}
+
 .about-card-bio {
-  font-size: 13.5px; color: #9a9a9a; line-height: 1.6; margin-top: 10px;
-  max-width: 320px;
+  font-size: 13.5px;
+  color: #9a9a9a;
+  line-height: 1.65;
+  margin-top: 12px;
+  max-width: 360px;
 }
 
 /* Social Links */
 .about-card-socials {
-  display: flex; gap: 12px; margin-top: 16px;
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
 }
 .about-social-link {
-  display: flex; align-items: center; justify-content: center;
-  width: 36px; height: 36px; border-radius: 50%;
-  background: rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #9a9a9a;
-  transition: all 0.3s ease;
+  color: #a0a0a0;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .about-social-link:hover {
   color: #D4AF37;
-  border-color: rgba(212, 175, 55, 0.5);
-  background: rgba(212, 175, 55, 0.1);
-  box-shadow: 0 0 16px rgba(212, 175, 55, 0.25);
+  border-color: rgba(212, 175, 55, 0.6);
+  background: rgba(212, 175, 55, 0.12);
+  box-shadow: 0 0 18px rgba(212, 175, 55, 0.3);
+  transform: translateY(-2px);
 }
 
 /* Values Strip */
 .about-values {
-  display: flex; align-items: center; gap: 32px;
-  margin-top: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 32px;
+  margin-top: 56px;
   padding: 28px 48px;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.03), rgba(212, 175, 55, 0.02));
+  border: 1px solid rgba(212, 175, 55, 0.14);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  width: 100%;
+  max-width: 960px;
 }
 .about-value-item {
-  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
 }
 .about-value-number {
-  font-size: 28px; font-weight: 700; letter-spacing: -0.03em;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
   background: linear-gradient(135deg, #FFFFFF 0%, #E6C687 50%, #C5A059 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .about-value-label {
-  font-size: 11px; color: #9a9a9a; letter-spacing: 0.04em; text-transform: uppercase;
+  font-size: 11.5px;
+  color: #9a9a9a;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 .about-value-sep {
-  width: 1px; height: 32px; background: rgba(255, 255, 255, 0.1);
+  width: 1px;
+  height: 36px;
+  background: rgba(212, 175, 55, 0.15);
 }
 
 /* Responsive */
-@media (max-width: 700px) {
-  .about-grid { grid-template-columns: 1fr; gap: 28px; }
-  .about-values { flex-wrap: wrap; gap: 20px; padding: 20px 24px; }
+@media (max-width: 768px) {
+  .about-grid { grid-template-columns: 1fr; gap: 24px; max-width: 480px; }
+  .about-card { padding: 30px 24px 32px; }
+  .about-values {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    padding: 24px;
+  }
   .about-value-sep { display: none; }
-  .about-lanyard-wrap { width: 100%; height: 360px; }
 }
 
 @media (max-width: 480px) {
-  .about-lanyard-wrap { width: 100%; height: 320px; }
-}
-
-/* Landscape orientation optimization for mobile devices */
-@media (max-height: 500px) and (orientation: landscape) {
-  .about-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-  .about-lanyard-wrap { width: 100%; height: 280px; }
+  .about-card-top { flex-direction: column; gap: 10px; align-items: center; }
+  .about-tags-list { justify-content: center; }
+  .about-values { grid-template-columns: 1fr; gap: 20px; }
 }
 
 /* ══════════════════════════════════════════
