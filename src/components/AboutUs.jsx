@@ -25,10 +25,10 @@ function LanyardCard({ member, index }) {
       {/* 3D Lanyard */}
       <div className="about-lanyard-wrap">
         <Lanyard
-          position={[0, 0, 11]}
+          position={[0, -1, 11]}
           gravity={[0, -40, 0]}
           cardGLB={member.cardGLB}
-          lanyardWidth={1.3}
+          lanyardWidth={0.45}
           cardScale={2.8}
         />
         {/* Glow ring under lanyard */}

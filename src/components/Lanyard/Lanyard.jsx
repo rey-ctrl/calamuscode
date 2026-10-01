@@ -202,9 +202,9 @@ function Band({
   const [dragged, drag] = useState(false);
   const [hovered, hover] = useState(false);
 
-  useRopeJoint(fixed, j1, [[0, 0, 0], [0, 0, 0], 0.7]);
-  useRopeJoint(j1, j2, [[0, 0, 0], [0, 0, 0], 0.7]);
-  useRopeJoint(j2, j3, [[0, 0, 0], [0, 0, 0], 0.7]);
+  useRopeJoint(fixed, j1, [[0, 0, 0], [0, 0, 0], 0.45]);
+  useRopeJoint(j1, j2, [[0, 0, 0], [0, 0, 0], 0.45]);
+  useRopeJoint(j2, j3, [[0, 0, 0], [0, 0, 0], 0.45]);
   useSphericalJoint(j3, card, [
     [0, 0, 0],
     [0, 1.5, 0]
@@ -250,7 +250,7 @@ function Band({
 
   return (
     <>
-      <group position={[0, 3.1, 0]}>
+      <group position={[0, 2.45, 0]}>
         <RigidBody ref={fixed} {...segmentProps} type="fixed" />
         <RigidBody position={[0.5, 0, 0]} ref={j1} {...segmentProps}>
           <BallCollider args={[0.1]} />
